@@ -21,6 +21,6 @@ public class Vehicle {
     private Long serviceId;
     private String vehicleType;
     private int serviceYear;
-    
+
     
 }
