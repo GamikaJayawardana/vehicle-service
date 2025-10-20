@@ -1,7 +1,5 @@
 package com.example.vehicle_service.model;
 
-import java.lang.reflect.Type;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,11 +9,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
-@Table(name = "vehicles")
+@Entity // JPA annotation to mark this class as a database entity
+@AllArgsConstructor // Lombok annotation to generate an all-arguments constructor
+@NoArgsConstructor // Lombok annotation to generate a no-argument constructor
+@Data // Lombok annotation to generate getters, setters, toString, equals, and hashCode methods
+@Table(name = "vehicles") // Specifies the table name in the database
 public class Vehicle {
 
     @Id
@@ -23,5 +21,6 @@ public class Vehicle {
     private Long serviceId;
     private String vehicleType;
     private int serviceYear;
+    
     
 }

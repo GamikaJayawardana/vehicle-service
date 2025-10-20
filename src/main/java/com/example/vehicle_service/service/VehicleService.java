@@ -1,13 +1,18 @@
 package com.example.vehicle_service.service;
 
-import java.util.List;
-
 import com.example.vehicle_service.model.Vehicle;
 
+import java.util.List;
+import java.util.Optional;
+
 public interface VehicleService {
-    Vehicle saveVehicle(Vehicle employee);
+
     List<Vehicle> getAllVehicles();
-    Vehicle getVehicleById(Long id);
-    Vehicle updateVehicle(Vehicle vehicle, Long id);
-    void deleteVehicle(Long id);
+
+    List<Vehicle> getVehiclesByYear(int year);
+
+
+    Optional<String> getVehicleTypeById(Long serviceId);
+
+    void deleteVehiclesByYear(int year);
 }
