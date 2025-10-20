@@ -11,8 +11,9 @@ public interface VehicleService {
 
     List<Vehicle> getVehiclesByYear(int year);
 
-
     Optional<String> getVehicleTypeById(Long serviceId);
 
     void deleteVehiclesByYear(int year);
+
+    Vehicle createVehicle(Vehicle vehicle);
 }

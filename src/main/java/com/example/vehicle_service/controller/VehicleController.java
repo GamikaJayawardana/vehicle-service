@@ -3,6 +3,7 @@ package com.example.vehicle_service.controller;
 import com.example.vehicle_service.model.Vehicle;
 import com.example.vehicle_service.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,5 +44,11 @@ public class VehicleController {
     public ResponseEntity<String> deleteVehiclesByYear(@PathVariable int year) {
         vehicleService.deleteVehiclesByYear(year);
         return ResponseEntity.ok("Successfully deleted all service records for the year: " + year);
+    }
+
+    @PostMapping
+    public ResponseEntity<Vehicle> createVehicle(@RequestBody Vehicle vehicle) {
+        Vehicle newVehicle = vehicleService.createVehicle(vehicle);
+        return new ResponseEntity<>(newVehicle, HttpStatus.CREATED);
     }
 }

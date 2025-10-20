@@ -41,4 +41,10 @@ public class VehicleServiceImpl implements VehicleService {
         
         vehicleRepository.deleteByServiceYear(year);
     }
+
+    @Override
+    public Vehicle createVehicle(Vehicle vehicle) {
+        return vehicleRepository.save(vehicle);
+    }
+    
 }
